@@ -21,3 +21,5 @@ npm install
 
 
 npm install -g npm
+
+sudo apt install libpcre2-16-0 libpcre2-8-0 libpcre2-32-0
