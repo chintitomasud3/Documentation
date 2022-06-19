@@ -1,4 +1,6 @@
 # Environment File copy
+
+composer install --ignore-platform-reqs
 cp .env.example .env
 
 php artisan key:generate
