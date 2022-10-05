@@ -6,3 +6,8 @@ php artisan ui vue --auth
 
 
 composer require yajra/laravel-datatables-oracle
+
+//passing data -> Controllers
+ $masud = "masudur rahman";
+// $data = compact("masud");
+  return view("employee", compact('masud'));
