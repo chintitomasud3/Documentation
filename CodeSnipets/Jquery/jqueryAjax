@@ -1,0 +1,21 @@
+<script>
+        $(function () {
+            $("button").click(function () {
+                $.ajax({
+                    type: "GET",
+                    url: "/Students/StudentList",
+                    dataType: "json",
+                    success: function (response) {
+                        console.log(response[0]);
+                        $("ol").append(response[0].studentName);
+                    },
+                    failure: function (response) {
+                        alert(response.responseText);
+                    },
+                    error: function (response) {
+                        alert(response.responseText);
+                    }
+                });
+            });
+        });
+    </script>
