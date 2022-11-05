@@ -1,4 +1,9 @@
-   //Controller class
+  ```cs
+
+
+  
+  
+  //Controller class
    public IActionResult StudentAllDepartment() {
 
            // List<Student> studentList = _context.Students.ToList();
@@ -110,3 +115,4 @@
         }
     </tbody>
 </table>
+```
