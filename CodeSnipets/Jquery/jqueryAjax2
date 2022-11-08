@@ -1,0 +1,21 @@
+ $.ajax({
+                url: "/Students/StudentList",
+                method:"GET",
+                success:function(data){
+
+                    console.log(data[0].email);
+                    $("#stdname").text(data[0].email).click(function(){
+                     $("#stdname").addClass("btn btn-primary");
+                    });
+                    
+
+
+                },
+                error:function(err){
+                  console.log(err);
+                }
+
+
+           
+           
+           })
