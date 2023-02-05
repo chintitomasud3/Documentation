@@ -1,0 +1,64 @@
+function showemployeelist() {
+    $.ajax('/Employees/Employeelist',
+        {
+            dataType: 'json', // type of response data
+            type: "Get",
+            contentType: "application/json; charset=utf-8",
+               // timeout milliseconds
+            success: function (data, status, xhr) {   // success callback function
+                console.log(data)
+                var object = '';
+                $.each(data, function (index, item) {
+
+                    object += '<tr>';
+                    object += '<td>' + item.id + '</td>';
+                    object += '<td>' + item.name + '</td>';
+                    object += '</tr>'
+
+
+
+                });
+                $('#data_masud').html(object);
+            },
+            error: function (jqXhr, textStatus, errorMessage) { // error callback 
+                $('p').append('Error: ' + errorMessage);
+            }
+        });
+        
+        
+        
+@{
+    ViewData["Title"] = "EmployeeIndex";
+}
+
+<h1>EmployeeIndex</h1>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>City</th>
+            <th>Email</th>
+            <th>Salary</th>
+            <th>Opearation</th>
+        </tr>
+
+    </thead>
+    <tbody id="data_masud">
+        <tr>
+            <td>1</td>
+             <td>Masudur rahman</td>
+             <td>Dhaka</td>
+              <td>mrahman@yahoo.com</td>
+              <td>50000</td>
+
+        </tr>
+    </tbody>
+
+</table>
+
+@section Scripts {
+    <script src="~/js/Custom.js"></script>
+}
+<p></p>
