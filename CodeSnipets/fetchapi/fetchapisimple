@@ -1,8 +1,16 @@
 function fetchISSLocation() {
     fetch('http://api.open-notify.org/iss-now.json')
       .then(response => response.json())
-      .then(data => console.log(data))
+      .then(gotdata)
       .catch(error => console.log("hoinai"));
   }
   
   fetchISSLocation();
+
+
+function gotdata(data){
+     console.log(data.message);
+     const para = document.createElement("p");
+     para.innerText = data.message;
+     document.body.appendChild(para);
+    }
